@@ -1,10 +1,14 @@
 {
     "name": "hexlet/code",
+    "version": "0.0.1",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        }
+            "php\\project\\lvl1\\": "src/"
+        },
+        "files": [
+            "src/Cli.php"
+        ]
     },
     "authors": [
         {
@@ -12,7 +16,14 @@
             "email": "k.vasiliy.r@gmail.com"
         }
     ],
-    "require": {},
+    "description": "hexlet FUL 1st PROjECT",
+    "license": "MIT",
+    "scripts": {
+        "test": "phpunit tests"
+        },
+    "require": {
+
+    },
     "bin": [
         "bin/brain-games"
     ]

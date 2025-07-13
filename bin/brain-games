@@ -1,3 +1,9 @@
+#!/usr/bin/env php;
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once "src/Cli.php";
 
-echo "Welcome to the Brain Games!";
+use function BrainGames\Cli\getName;
+
+//получить имя пользователя
+getName();
