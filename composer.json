@@ -1,30 +1,20 @@
 {
     "name": "hexlet/code",
-    "version": "0.0.1",
-    "type": "project",
+    "license": "MIT",
+    "description": "Brain training games collection",
     "autoload": {
         "psr-4": {
-            "php\\project\\lvl1\\": "src/"
-        },
-        "files": [
-            "src/Cli.php"
-        ]
+            "Hexlet\\Code\\": "src/"
+        }
     },
+    "bin": [
+        "bin/brain-games"
+    ],
     "authors": [
         {
             "name": "webDevWay",
             "email": "k.vasiliy.r@gmail.com"
         }
     ],
-    "description": "hexlet FUL 1st PROjECT",
-    "license": "MIT",
-    "scripts": {
-        "test": "phpunit tests"
-        },
-    "require": {
-
-    },
-    "bin": [
-        "bin/brain-games"
-    ]
+    "require": {}
 }

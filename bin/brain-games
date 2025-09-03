@@ -1,9 +1,11 @@
-#!/usr/bin/env php;
+#!/usr/bin/env php
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once "src/Cli.php";
+//require_once "src/Cli.php";
 
-use function BrainGames\Cli\getName;
+//use function BrainGames\Cli\getName;
 
 //получить имя пользователя
-getName();
+echo "PROGIM!";
+
+//getName();
