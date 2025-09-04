@@ -11,3 +11,5 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=webDevWay_php-project-lvl1&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=webDevWay_php-project-lvl1)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=webDevWay_php-project-lvl1&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=webDevWay_php-project-lvl1)
 [![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=webDevWay_php-project-lvl1)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=webDevWay_php-project-lvl1)](https://sonarcloud.io/summary/new_code?id=webDevWay_php-project-lvl1)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=webDevWay_php-project-lvl1&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=webDevWay_php-project-lvl1)
