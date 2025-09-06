@@ -1,1 +1,20 @@
-/vendor/
+# Логи
+*.log
+
+# Зависимости
+node_modules/
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ОС
+.DS_Store
+Thumbs.db
+
+# Временные файлы
+*.tmp
+*.temp

@@ -5,10 +5,16 @@
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
-        }
+        },
+        "files": [
+            "src/Cli.php",
+            "src/BrainEven.php"
+        ]
     },
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even",
+        "brain-calc"
     ],
     "authors": [
         {
@@ -16,5 +22,10 @@
             "email": "k.vasiliy.r@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+       "wp-cli/php-cli-tools": "^0.12.5"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.13"
+    }
 }
