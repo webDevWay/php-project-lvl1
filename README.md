@@ -2,6 +2,8 @@ Brain-Even - https://asciinema.org/a/UZBtDobwLPOrNa1r3vp6JYiWS
 
 Brain-Calc - https://asciinema.org/a/cKn78eDiU1h5MTCMr1183kawd
 
+Brain-Gcd - https://asciinema.org/a/wWwYQWsxsikakJawzl5Wwxe4Y
+
 ### Hexlet tests and linter status:
 
 [![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=webDevWay_php-project-lvl1)
