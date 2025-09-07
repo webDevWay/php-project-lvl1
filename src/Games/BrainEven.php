@@ -15,7 +15,8 @@ function getUserName()
     //Инициализируем счётчик
         $count = 0;
     //--Функция проверки ответов
-    function checkAnswer($count, $name) {        
+    function checkAnswer($count, $name)
+    {
         $num = random_int(1, 100);
         $isEven = $num % 2 === 0 ? true : false;
         $answer = prompt("Question:", $num);
@@ -24,8 +25,7 @@ function getUserName()
         if ($answer !== $expectedAnswer) {
             line("{$answer} is wrong answer ;(. Correct answer was '{$expectedAnswer}'.");
             return line("Let's try again, %s!", $name);
-        }
-        else {
+        } else {
             line("Correct!");
             $count++;
             if ($count === 3) {
