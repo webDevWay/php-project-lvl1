@@ -5,6 +5,8 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\BrainGcd\getGcd;
+use function BrainGames\BrainProgression\generateProgression;
+use function BrainGames\BrainProgression\hideElement;
 
 //---Приветствуем пользователя, получаем имя
 function getUserName()
@@ -24,22 +26,22 @@ function checkAnswer($count, $name, $path)
     $num = random_int(1, 100);
     $num2 = random_int(1, 10);
 
-    //---Логика игр
-    //Подлючим логику в зависимости от игры
+    //--- Логика игр
+    //-- Подлючим логику в зависимости от выбора игры
     switch ($filepath) {
-        //Игра - Чётные числа
+        //-- Игра - "Проверка на чётность"
         case "even":
             line('Answer "yes" if the number is even, otherwise answer "no".');
             $answer = prompt("Question:", $num);
             $isEven = $num % 2 === 0 ? true : false;
             $expectedAnswer = $isEven ? 'yes' : 'no';
             break;
-        //Игра - Калькулятор
+        //-- Игра - "Калькулятор"
         case "calc":
             line('What is the result of the expression?');
             $operation = ["+", "-", "*"];
             $thisOperation = $operation[random_int(0, 2)];
-            //Перебрать рандомные операторы
+            //-- Перебрать рандомные операторы --
             switch ($thisOperation) {
                 case "*":
                     $expectedAnswer = $num * $num2;
@@ -56,12 +58,19 @@ function checkAnswer($count, $name, $path)
             $answer = prompt("Question:", "{$num} {$thisOperation} {$num2}");
             $answer = is_string($answer) ? $answer : (int)$answer;
             break;
-        //Игра - Общий делитель
+        //-- Игра - Общий делитель -- "НОД"
         case "gcd":
             $expectedAnswer = getGcd($num, $num2);
-            print_r($expectedAnswer);
             line('Find the greatest common divisor of given numbers.');
             $answer = prompt("Question:", "{$num} {$num2}");
+            break;
+        //-- Игра - "Арифметическая прогрессия"
+        case "progression":
+            $progression = generateProgression();
+            $hiddenElement = hideElement($progression);
+            $expectedAnswer = $hiddenElement["hidden_value"];
+            line('What number is missing in the progression?');
+            $answer = prompt("Question:", implode(" ", $hiddenElement["progression"]));
             break;
         default:
             return line("This Game is still in production :)");

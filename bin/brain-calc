@@ -14,5 +14,5 @@ if (file_exists($autoloadPath1)) {
 }
 //получим имя пользователя
 $userName = getUserName();
-//
+//запуск игры
 checkAnswer($count = 3, $userName, $path="calc");
