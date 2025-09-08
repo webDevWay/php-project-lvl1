@@ -76,7 +76,7 @@ function checkAnswer($count, $name, $path)
             break;
         //-- Игра - "Простое ли число?"
         case "prime":
-            line('Answer "yes" if the number is prime. Otherwise answer "no".');
+            line('Answer "yes" if given number is prime. Otherwise answer "no".');
             $answer = prompt("Question: {$num}");
             $expectedAnswer = isPrime($num) ? 'yes' : 'no';
             break;
