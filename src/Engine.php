@@ -34,7 +34,7 @@ function checkAnswer($count, $name, $path)
         //-- Игра - "Проверка на чётность"
         case "even":
             line('Answer "yes" if the number is even, otherwise answer "no".');
-            $answer = prompt("Question:", $num);
+            $answer = prompt("Question: {$num}");
             $isEven = $num % 2 === 0 ? true : false;
             $expectedAnswer = $isEven ? 'yes' : 'no';
             break;
@@ -57,14 +57,14 @@ function checkAnswer($count, $name, $path)
                     $expectedAnswer = $num - $num2;
                     break;
             }
-            $answer = prompt("Question:", "{$num} {$thisOperation} {$num2}");
+            $answer = prompt("Question: {$num} {$thisOperation} {$num2}");
             $answer = is_string($answer) ? $answer : (int)$answer;
             break;
         //-- Игра - Общий делитель -- "НОД"
         case "gcd":
             $expectedAnswer = getGcd($num, $num2);
             line('Find the greatest common divisor of given numbers.');
-            $answer = prompt("Question:", "{$num} {$num2}");
+            $answer = prompt("Question: {$num} {$num2}");
             break;
         //-- Игра - "Арифметическая прогрессия"
         case "progression":
@@ -72,12 +72,12 @@ function checkAnswer($count, $name, $path)
             $hiddenElement = hideElement($progression);
             $expectedAnswer = $hiddenElement["hidden_value"];
             line('What number is missing in the progression?');
-            $answer = prompt("Question:", implode(" ", $hiddenElement["progression"]));
+            $answer = prompt("Question: " . implode(" ", $hiddenElement["progression"]));
             break;
         //-- Игра - "Простое ли число?"
         case "prime":
             line('Answer "yes" if the number is prime. Otherwise answer "no".');
-            $answer = prompt("Question:", $num);
+            $answer = prompt("Question: {$num}");
             $expectedAnswer = isPrime($num) ? 'yes' : 'no';
             break;
         default:
