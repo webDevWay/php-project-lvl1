@@ -13,7 +13,7 @@ use function BrainGames\BrainPrime\isPrime;
 function getUserName()
 {
     //Приветствуем пользователя
-    line('Welcome to the Brain Game!');
+    line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     //Вернуть полученное имя
