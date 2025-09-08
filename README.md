@@ -1,10 +1,12 @@
-Brain-Even - https://asciinema.org/a/UZBtDobwLPOrNa1r3vp6JYiWS
+Brain-Even: https://asciinema.org/a/UZBtDobwLPOrNa1r3vp6JYiWS
 
-Brain-Calc - https://asciinema.org/a/cKn78eDiU1h5MTCMr1183kawd
+Brain-Calc: https://asciinema.org/a/cKn78eDiU1h5MTCMr1183kawd
 
-Brain-Gcd - https://asciinema.org/a/wWwYQWsxsikakJawzl5Wwxe4Y
+Brain-Gcd: https://asciinema.org/a/wWwYQWsxsikakJawzl5Wwxe4Y
 
-Result Url: https://asciinema.org/a/sNPCT391AYUgrvR8Oy4ASUkYk
+Brain-Progression: https://asciinema.org/a/sNPCT391AYUgrvR8Oy4ASUkYk
+
+Brain-Prime: https://asciinema.org/a/fOkN1DJ0yYfTX13CLybPBwEec
 
 ### Hexlet tests and linter status:
 

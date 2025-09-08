@@ -7,6 +7,7 @@ use function cli\prompt;
 use function BrainGames\BrainGcd\getGcd;
 use function BrainGames\BrainProgression\generateProgression;
 use function BrainGames\BrainProgression\hideElement;
+use function BrainGames\BrainPrime\isPrime;
 
 //---Приветствуем пользователя, получаем имя
 function getUserName()
@@ -23,6 +24,7 @@ function checkAnswer($count, $name, $path)
 {
     //---Узнать какой файл обратился (для дальнейшей логики)
     $filepath = $path;
+    //-- Генерация случайных чисел для игр
     $num = random_int(1, 100);
     $num2 = random_int(1, 10);
 
@@ -71,6 +73,12 @@ function checkAnswer($count, $name, $path)
             $expectedAnswer = $hiddenElement["hidden_value"];
             line('What number is missing in the progression?');
             $answer = prompt("Question:", implode(" ", $hiddenElement["progression"]));
+            break;
+        //-- Игра - "Простое ли число?"
+        case "prime":
+            line('Answer "yes" if the number is prime. Otherwise answer "no".');
+            $answer = prompt("Question:", $num);
+            $expectedAnswer = isPrime($num) ? 'yes' : 'no';
             break;
         default:
             return line("This Game is still in production :)");

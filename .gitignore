@@ -18,3 +18,12 @@ Thumbs.db
 # Временные файлы
 *.tmp
 *.temp
+
+# Лишние файлы
+composer
+composer.bat
+composer.phar
+phpcbf.phar
+phpcs.phar
+video.cast
+index.html

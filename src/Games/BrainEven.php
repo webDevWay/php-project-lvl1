@@ -5,6 +5,7 @@ namespace BrainGames\BrainEven;
 use function cli\line;
 use function cli\prompt;
 
+/*
 function getUserName()
 {
     //Приветствуем пользователя
@@ -35,4 +36,4 @@ function getUserName()
         }
     }
     checkAnswer($count, $name);
-}
+}*/
