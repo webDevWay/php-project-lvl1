@@ -3,8 +3,13 @@
 namespace BrainGames\BrainProgression;
 
 //-- Генерируем прогрессию
-function generateProgression(int $length = 10, int $minStep = 2, int $maxStep = 5, int $minStart = 1, int $maxStart = 20): array
-{
+function generateProgression(
+    int $length = 10,
+    int $minStep = 2,
+    int $maxStep = 5,
+    int $minStart = 1,
+    int $maxStart = 20
+): array {
     $start = rand($minStart, $maxStart);
     $step = rand($minStep, $maxStep);
 
