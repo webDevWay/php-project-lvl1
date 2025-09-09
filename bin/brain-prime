@@ -14,6 +14,14 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 //получим имя пользователя
-$userName = getUserName();
+/*$userName = getUserName();
 //запуск игры
 checkAnswer($count = 3, $userName, $path="prime");
+ case "prime":
+            line('Answer "yes" if given number is prime. Otherwise answer "no".');
+            $answer = prompt("Question: {$num}");
+            $expectedAnswer = isPrime($num) ? 'yes' : 'no';
+            break;
+        default:
+            return line("This Game is still in production :)");
+    }

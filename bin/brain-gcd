@@ -14,7 +14,14 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 //получим имя пользователя
-$userName = getUserName();
+/*$userName = getUserName();
 //запуск игры
 checkAnswer($count = 3, $userName, $path="gcd");
 
+  //-- Игра - Общий делитель -- "НОД"
+        case "gcd":
+            $expectedAnswer = getGcd($num, $num2);
+            line('Find the greatest common divisor of given numbers.');
+            $answer = prompt("Question: {$num} {$num2}");
+            break;
+     

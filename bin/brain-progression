@@ -14,7 +14,16 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 //получим имя пользователя
-$userName = getUserName();
+/*$userName = getUserName();
 //Запустим игру
 checkAnswer($count = 3, $userName, $path="progression");
 
+        case "progression":
+            $progression = generateProgression();
+            $hiddenElement = hideElement($progression);
+            $expectedAnswer = $hiddenElement["hidden_value"];
+            line('What number is missing in the progression?');
+            $answer = prompt("Question: " . implode(" ", $hiddenElement["progression"]));
+            break;
+        //-- Игра - "Простое ли число?"
+       

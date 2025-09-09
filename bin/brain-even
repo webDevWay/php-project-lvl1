@@ -1,9 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-//use function BrainGames\BrainEven\getUserName;
-use function BrainGames\Engine\getUserName;
-use function BrainGames\Engine\checkAnswer;
+use function BrainGames\BrainEven\brainEvenGame;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -13,7 +11,6 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-//получим имя пользователя
-$userName = getUserName();
-//запуск игры
-checkAnswer($count = 3, $userName, $path="even");
+
+//запуск игры со значением счётчиика по умолчанию
+brainEvenGame($count = 3);

@@ -4,36 +4,27 @@ namespace BrainGames\BrainEven;
 
 use function cli\line;
 use function cli\prompt;
-
-/*
-function getUserName()
+use function BrainGames\Engine\getUserName;
+use function BrainGames\Engine\checkAnswer;
+//функция проверки чётности
+function isEven(int $num) : string 
 {
-    //Приветствуем пользователя
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    return $num % 2 === 0 ? "yes" : "no";
+}
+//-- Игра - "Проверка на чётность"
+function brainEvenGame(int $count = 3): void
+{    
+    //получим имя пользователя
+    $userName = getUserName();
     line('Answer "yes" if the number is even, otherwise answer "no".');
-    //Инициализируем счётчик
-        $count = 0;
-    //--Функция проверки ответов
-    function checkAnswer($count, $name)
-    {
+      
+    $counterAnswers = 0;
+
+    while ($counterAnswers < $count) {
         $num = random_int(1, 100);
-        $isEven = $num % 2 === 0 ? true : false;
-        $answer = prompt("Question:", $num);
-        line("Your answer: {$answer}");
-        $expectedAnswer = $isEven ? 'yes' : 'no';
-        if ($answer !== $expectedAnswer) {
-            line("{$answer} is wrong answer ;(. Correct answer was '{$expectedAnswer}'.");
-            return line("Let's try again, %s!", $name);
-        } else {
-            line("Correct!");
-            $count++;
-            if ($count === 3) {
-                return line("Congratulations, %s!", $name);
-            }
-            checkAnswer($count, $name);
-        }
+        $answer = prompt("Question: {$num}");
+        $expectedAnswer = isEven($num);
+        //--Функция проверки ответов
+        $counterAnswers = checkAnswer($counterAnswers, $userName, $answer, $expectedAnswer);
     }
-    checkAnswer($count, $name);
-}*/
+}

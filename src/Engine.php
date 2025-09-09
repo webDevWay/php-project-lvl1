@@ -4,6 +4,7 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\BrainEven\brainEvenGame;
 use function BrainGames\BrainGcd\getGcd;
 use function BrainGames\BrainProgression\generateProgression;
 use function BrainGames\BrainProgression\hideElement;
@@ -19,82 +20,30 @@ function getUserName(): string
     //Вернуть полученное имя
     return $name;
 }
-//---Функция проверки ответов
-function checkAnswer(int $count, string $name, string $path)
+    //---Функция для неверного ответа
+function wrongAnswer(string $name, mixed $answer, mixed $expectedAnswer) {
+    line("{$answer} is wrong answer ;(. Correct answer was '{$expectedAnswer}'.");
+    line("Let's try again, %s!", $name);
+    return;
+}
+    //---Функция для верного ответа
+function trueAnswer(string $name) {
+    line("Congratulations, %s!", $name);
+    return;
+}
+    //---Функция проверки ответов
+function checkAnswer(int $counterAnswers, string $name, mixed $answer, mixed $expectedAnswer)
 {
-    //---Узнать какой файл обратился (для дальнейшей логики)
-    $filepath = $path;
-    //-- Генерация случайных чисел для игр
-    $num = random_int(1, 100);
-    $num2 = random_int(1, 10);
-
-    //--- Логика игр
-    //-- Подлючим логику в зависимости от выбора игры
-    switch ($filepath) {
-        //-- Игра - "Проверка на чётность"
-        case "even":
-            line('Answer "yes" if the number is even, otherwise answer "no".');
-            $answer = prompt("Question: {$num}");
-            $isEven = $num % 2 === 0 ? true : false;
-            $expectedAnswer = $isEven ? 'yes' : 'no';
-            break;
-        //-- Игра - "Калькулятор"
-        case "calc":
-            line('What is the result of the expression?');
-            $operation = ["+", "-", "*"];
-            $thisOperation = $operation[random_int(0, 2)];
-            //-- Перебрать рандомные операторы --
-            switch ($thisOperation) {
-                case "*":
-                    $expectedAnswer = $num * $num2;
-                    break;
-
-                case "+":
-                    $expectedAnswer = $num + $num2;
-                    break;
-
-                case "-":
-                    $expectedAnswer = $num - $num2;
-                    break;
-            }
-            $answer = prompt("Question: {$num} {$thisOperation} {$num2}");
-            $answer = is_string($answer) ? $answer : (int)$answer;
-            break;
-        //-- Игра - Общий делитель -- "НОД"
-        case "gcd":
-            $expectedAnswer = getGcd($num, $num2);
-            line('Find the greatest common divisor of given numbers.');
-            $answer = prompt("Question: {$num} {$num2}");
-            break;
-        //-- Игра - "Арифметическая прогрессия"
-        case "progression":
-            $progression = generateProgression();
-            $hiddenElement = hideElement($progression);
-            $expectedAnswer = $hiddenElement["hidden_value"];
-            line('What number is missing in the progression?');
-            $answer = prompt("Question: " . implode(" ", $hiddenElement["progression"]));
-            break;
-        //-- Игра - "Простое ли число?"
-        case "prime":
-            line('Answer "yes" if given number is prime. Otherwise answer "no".');
-            $answer = prompt("Question: {$num}");
-            $expectedAnswer = isPrime($num) ? 'yes' : 'no';
-            break;
-        default:
-            return line("This Game is still in production :)");
-    }
-    //Показать пользователю его ответ
     line("Your answer: {$answer}");
-
     if ($answer != $expectedAnswer) {
-        line("{$answer} is wrong answer ;(. Correct answer was '{$expectedAnswer}'.");
-        return line("Let's try again, %s!", $name);
+        wrongAnswer($name, $answer, $expectedAnswer);
+        return $counterAnswers = 3;      
     } else {
         line("Correct!");
-        $count--;
-        if ($count <= 0) {
-            return line("Congratulations, %s!", $name);
+        $counterAnswers++;
+        if ($counterAnswers == 3) {
+            trueAnswer($name);
         }
-        checkAnswer($count, $name, $path);
     }
+    return $counterAnswers;
 }
