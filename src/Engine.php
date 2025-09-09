@@ -10,7 +10,7 @@ use function BrainGames\BrainProgression\hideElement;
 use function BrainGames\BrainPrime\isPrime;
 
 //---Приветствуем пользователя, получаем имя
-function getUserName()
+function getUserName(): string
 {
     //Приветствуем пользователя
     line('Welcome to the Brain Games!');
@@ -20,7 +20,7 @@ function getUserName()
     return $name;
 }
 //---Функция проверки ответов
-function checkAnswer($count, $name, $path)
+function checkAnswer(int $count, string $name, string $path)
 {
     //---Узнать какой файл обратился (для дальнейшей логики)
     $filepath = $path;

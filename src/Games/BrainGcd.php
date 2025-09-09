@@ -3,7 +3,7 @@
 namespace BrainGames\BrainGcd;
 
 //-- вычислим общий делитель
-function getGcd($num1, $num2)
+function getGcd(int $num1, int $num2): int
 {
     $a = $num1;
     $b = $num2;

@@ -3,7 +3,7 @@
 namespace BrainGames\BrainProgression;
 
 //-- Генерируем прогрессию
-function generateProgression($length = 10, $minStep = 2, $maxStep = 5, $minStart = 1, $maxStart = 20)
+function generateProgression(int $length = 10, int $minStep = 2, int $maxStep = 5, int $minStart = 1, int $maxStart = 20): array
 {
     $start = rand($minStart, $maxStart);
     $step = rand($minStep, $maxStep);
@@ -16,7 +16,7 @@ function generateProgression($length = 10, $minStep = 2, $maxStep = 5, $minStart
     return $progression;
 }
 //-- Скрыть элемент
-function hideElement($progression)
+function hideElement(array $progression): array
 {
     $hiddenIndex = rand(0, count($progression) - 1);
     $hiddenValue = $progression[$hiddenIndex];

@@ -3,7 +3,7 @@
 namespace BrainGames\BrainPrime;
 
 //-- Проверка на простое число
-function isPrime($number)
+function isPrime(int $number): bool
 {
     if ($number <= 1) {
         return false;
