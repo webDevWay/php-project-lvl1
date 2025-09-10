@@ -12,30 +12,6 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-//получим имя пользователя
-/*$userName = getUserName();
-//запуск игры
-checkAnswer($count = 3, $userName, $path="calc");
-//-- Игра - "Калькулятор"
-        case "calc":
-            line('What is the result of the expression?');
-            $operation = ["+", "-", "*"];
-            $thisOperation = $operation[random_int(0, 2)];
-            //-- Перебрать рандомные операторы --
-            switch ($thisOperation) {
-                case "*":
-                    $expectedAnswer = $num * $num2;
-                    break;
 
-                case "+":
-                    $expectedAnswer = $num + $num2;
-                    break;
 
-                case "-":
-                    $expectedAnswer = $num - $num2;
-                    break;
-            }
-            $answer = prompt("Question: {$num} {$thisOperation} {$num2}");
-            $answer = is_string($answer) ? $answer : (int)$answer;
-            break;
-      
+//checkAnswer($count = 3, $userName, $path="calc");

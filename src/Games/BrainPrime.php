@@ -2,6 +2,9 @@
 
 namespace BrainGames\BrainPrime;
 
+use function BrainGames\Engine\getUserName;
+use function BrainGames\Engine\checkAnswer;
+
 //-- Проверка на простое число
 function isPrime(int $number): bool
 {

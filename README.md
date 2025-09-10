@@ -1,4 +1,4 @@
-Welcome to the Brain Games!
+<h1>Welcome to the Brain Games!</h1>
 
 Brain-Even: https://asciinema.org/a/UZBtDobwLPOrNa1r3vp6JYiWS
 

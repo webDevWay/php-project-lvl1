@@ -4,13 +4,8 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\BrainEven\brainEvenGame;
-use function BrainGames\BrainGcd\getGcd;
-use function BrainGames\BrainProgression\generateProgression;
-use function BrainGames\BrainProgression\hideElement;
-use function BrainGames\BrainPrime\isPrime;
 
-//---Приветствуем пользователя, получаем имя
+    //---Приветствуем пользователя, получаем имя
 function getUserName(): string
 {
     //Приветствуем пользователя
@@ -20,30 +15,36 @@ function getUserName(): string
     //Вернуть полученное имя
     return $name;
 }
+    //---Функция проверки ответов
+function checkAnswer(array $gameParams)
+{
+    $name = getUserName();
+    ["rules" => $rules, 
+    "expectedAnswer" => $expectedAnswer,
+    "questions" => $questions] = $gameParams;
+    line($rules);
+    for($i = 0; $i < count($questions); $i++) {
+        $answer = prompt("Question: {$questions[$i]}");
+        line("Your answer: {$answer}");
+        if ($answer != $expectedAnswer[$i]) {
+            wrongAnswer($name, $answer[$i], $expectedAnswer[$i]);
+            return;
+        } else {
+            line("Correct!");
+        }
+    }
+    trueAnswers($name);
+}
     //---Функция для неверного ответа
-function wrongAnswer(string $name, mixed $answer, mixed $expectedAnswer) {
+function wrongAnswer(string $name, mixed $answer, mixed $expectedAnswer)
+{
     line("{$answer} is wrong answer ;(. Correct answer was '{$expectedAnswer}'.");
     line("Let's try again, %s!", $name);
     return;
 }
     //---Функция для верного ответа
-function trueAnswer(string $name) {
+function trueAnswers(string $name)
+{
     line("Congratulations, %s!", $name);
     return;
-}
-    //---Функция проверки ответов
-function checkAnswer(int $counterAnswers, string $name, mixed $answer, mixed $expectedAnswer)
-{
-    line("Your answer: {$answer}");
-    if ($answer != $expectedAnswer) {
-        wrongAnswer($name, $answer, $expectedAnswer);
-        return $counterAnswers = 3;      
-    } else {
-        line("Correct!");
-        $counterAnswers++;
-        if ($counterAnswers == 3) {
-            trueAnswer($name);
-        }
-    }
-    return $counterAnswers;
 }
