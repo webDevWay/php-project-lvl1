@@ -1,9 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function BrainGames\Engine\getUserName;
-use function BrainGames\Engine\checkAnswer;
-
+use function BrainGames\Gcd\initGameData;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -13,15 +11,6 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-//получим имя пользователя
-/*$userName = getUserName();
-//запуск игры
-checkAnswer($count = 3, $userName, $path="gcd");
 
-  //-- Игра - Общий делитель -- "НОД"
-        case "gcd":
-            $expectedAnswer = getGcd($num, $num2);
-            line('Find the greatest common divisor of given numbers.');
-            $answer = prompt("Question: {$num} {$num2}");
-            break;
+initGameData();
      

@@ -1,9 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function BrainGames\Engine\getUserName;
-use function BrainGames\Engine\checkAnswer;
-
+use function BrainGames\Progression\initGameData;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -13,17 +11,5 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-//получим имя пользователя
-/*$userName = getUserName();
-//Запустим игру
-checkAnswer($count = 3, $userName, $path="progression");
 
-        case "progression":
-            $progression = generateProgression();
-            $hiddenElement = hideElement($progression);
-            $expectedAnswer = $hiddenElement["hidden_value"];
-            line('What number is missing in the progression?');
-            $answer = prompt("Question: " . implode(" ", $hiddenElement["progression"]));
-            break;
-        //-- Игра - "Простое ли число?"
-       
+initGameData();

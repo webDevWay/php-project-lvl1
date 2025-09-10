@@ -1,9 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function BrainGames\Engine\getUserName;
-use function BrainGames\Engine\checkAnswer;
-
+use function BrainGames\Prime\initGameData;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -13,15 +11,6 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-//получим имя пользователя
-/*$userName = getUserName();
-//запуск игры
-checkAnswer($count = 3, $userName, $path="prime");
- case "prime":
-            line('Answer "yes" if given number is prime. Otherwise answer "no".');
-            $answer = prompt("Question: {$num}");
-            $expectedAnswer = isPrime($num) ? 'yes' : 'no';
-            break;
-        default:
-            return line("This Game is still in production :)");
-    }
+
+initGameData();        
+        

@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function BrainGames\BrainEven\brainEvenGame;
+use function BrainGames\Even\initGameData;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -12,5 +12,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-//запуск игры со значением счётчиика по умолчанию
-brainEvenGame($count = 3);
+initGameData();

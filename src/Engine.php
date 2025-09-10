@@ -8,26 +8,25 @@ use function cli\prompt;
     //---Приветствуем пользователя, получаем имя
 function getUserName(): string
 {
-    //Приветствуем пользователя
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    //Вернуть полученное имя
+
     return $name;
 }
-    //---Функция проверки ответов
-function checkAnswer(array $gameParams)
+    //---Функция логики игры и проверки ответов
+function startGame(array $gameParams)
 {
     $name = getUserName();
-    ["rules" => $rules, 
+    ["rules" => $rules,
     "expectedAnswer" => $expectedAnswer,
     "questions" => $questions] = $gameParams;
     line($rules);
-    for($i = 0; $i < count($questions); $i++) {
+    for ($i = 0; $i < count($questions); $i++) {
         $answer = prompt("Question: {$questions[$i]}");
         line("Your answer: {$answer}");
         if ($answer != $expectedAnswer[$i]) {
-            wrongAnswer($name, $answer[$i], $expectedAnswer[$i]);
+            wrongAnswer($name, $answer, $expectedAnswer[$i]);
             return;
         } else {
             line("Correct!");
@@ -42,7 +41,7 @@ function wrongAnswer(string $name, mixed $answer, mixed $expectedAnswer)
     line("Let's try again, %s!", $name);
     return;
 }
-    //---Функция для верного ответа
+    //---Функция для верного ответа (конец игры)
 function trueAnswers(string $name)
 {
     line("Congratulations, %s!", $name);
