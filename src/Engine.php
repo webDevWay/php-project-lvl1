@@ -24,7 +24,7 @@ function startGame(array $gameParams): void
     line($rules);
     for ($i = 0; $i < count($questions); $i++) {
         $answer = prompt("Question: {$questions[$i]}");
-        $answer = is_string($expectedAnswer) ? $answer : (int)$answer;
+        $answer = is_string($expectedAnswer[$i]) ? $answer : (int)$answer;
         line("Your answer: {$answer}");
         if ($answer !== $expectedAnswer[$i]) {
             wrongAnswer($name, $answer, $expectedAnswer[$i]);
