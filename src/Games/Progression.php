@@ -5,11 +5,10 @@ namespace BrainGames\Progression;
 use function BrainGames\Engine\startGame;
 
  //-- Игра - "Арифметическая прогрессия"
-function initGameData(): void
+function initGameData(int $count = 3): void
 {
     $gameParams = [];
     $gameParams["rules"] = 'What number is missing in the progression?';
-    $count = 3;
     for ($counterAnswers = 0; $counterAnswers < $count; $counterAnswers++) {
         $progression = generateProgression();
         $hiddenElement = hideElement($progression);

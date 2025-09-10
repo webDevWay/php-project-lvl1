@@ -5,7 +5,7 @@ namespace BrainGames\Calc;
 use function BrainGames\Engine\startGame;
 
 //-- Игра - "Калькулятор"
-function initGameData($count = 3): void
+function initGameData(int $count = 3): void
 {
     $gameParams = [];
     $gameParams["rules"] = 'What is the result of the expression?';
@@ -21,7 +21,7 @@ function initGameData($count = 3): void
     startGame($gameParams);
 }
 
-function calculate($x, $y, $operator)
+function calculate(int $x, int $y, string $operator): int
 {
         $operations = [
             '+' => fn($x, $y) => $x + $y,

@@ -15,7 +15,7 @@ function getUserName(): string
     return $name;
 }
     //---Функция логики игры и проверки ответов
-function startGame(array $gameParams)
+function startGame(array $gameParams): void
 {
     $name = getUserName();
     ["rules" => $rules,
@@ -25,7 +25,7 @@ function startGame(array $gameParams)
     for ($i = 0; $i < count($questions); $i++) {
         $answer = prompt("Question: {$questions[$i]}");
         line("Your answer: {$answer}");
-        if ($answer != $expectedAnswer[$i]) {
+        if ($answer !== $expectedAnswer[$i]) {
             wrongAnswer($name, $answer, $expectedAnswer[$i]);
             return;
         } else {
@@ -35,14 +35,14 @@ function startGame(array $gameParams)
     trueAnswers($name);
 }
     //---Функция для неверного ответа
-function wrongAnswer(string $name, mixed $answer, mixed $expectedAnswer)
+function wrongAnswer(string $name, mixed $answer, mixed $expectedAnswer): void
 {
     line("{$answer} is wrong answer ;(. Correct answer was '{$expectedAnswer}'.");
     line("Let's try again, %s!", $name);
     return;
 }
     //---Функция для верного ответа (конец игры)
-function trueAnswers(string $name)
+function trueAnswers(string $name): void
 {
     line("Congratulations, %s!", $name);
     return;
