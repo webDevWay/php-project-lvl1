@@ -1,35 +1,36 @@
-<h1 text-align="center">Welcome to the Brain Games!</h1>
-<h3 text-align="center">Проект 1: [Игры разума](https://ru.hexlet.io/programs/php/projects/45)</h3>
-<h6 text-align="center">профессия PHP-разработчик от Hexlet</h6>
-
-Описание: «Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. 
-Каждая игра задает вопросы, на которые нужно дать правильные ответы. 
-После трех правильных ответов считается, что игра пройдена. 
-Неправильные ответы завершают игру и предлагают пройти ее заново.
+<h1 align="center">Welcome to the Brain Games!</h1>
+<h6 align="center">профессия PHP-разработчик от Hexlet</h6>
+<h3 align="center">Проект 1: <a href="https://ru.hexlet.io/programs/php/projects/45">Игры разума</a></h3>
 
 
-Установка: composer global require webdevway/hexlet-project-lvl1
+Описание: «Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга.</br> 
+Каждая игра задает вопросы, на которые нужно дать правильные ответы. </br>
+После трех правильных ответов считается, что игра пройдена. </br>
+Неправильные ответы завершают игру и предлагают пройти ее заново.</br>
 
 
-Определение четного числа.
-Запуск из консоли: make brain-even
-Пример: Brain-Even: https://asciinema.org/a/UZBtDobwLPOrNa1r3vp6JYiWS
+<h4>Установка: composer global require webdevway/hexlet-project-lvl1</h4>
 
-Калькулятор. Арифметические выражения, которые необходимо вычислить.
-Запуск из консоли: make brain-calc
-Пример: Brain-Calc: https://asciinema.org/a/cKn78eDiU1h5MTCMr1183kawd
 
-Определение наибольшего общего делителя.
-Запуск из консоли: make brain-gcd
-Пример: Brain-Gcd: https://asciinema.org/a/wWwYQWsxsikakJawzl5Wwxe4Y
+Определение четного числа.</br>
+Запуск из консоли: make brain-even</br>
+Пример: https://asciinema.org/a/UZBtDobwLPOrNa1r3vp6JYiWS
 
-Прогрессия. Поиск пропущенных чисел в последовательности чисел.
-Запуск из консоли: make brain-progression
-Пример: Brain-Progression: https://asciinema.org/a/sNPCT391AYUgrvR8Oy4ASUkYk
+Калькулятор. Арифметические выражения, которые необходимо вычислить.</br>
+Запуск из консоли: make brain-calc</br>
+Пример: https://asciinema.org/a/cKn78eDiU1h5MTCMr1183kawd
 
-Определение простого числа.
-Запуск из консоли: make brain-prime
-Пример: Brain-Prime: https://asciinema.org/a/fOkN1DJ0yYfTX13CLybPBwEec
+Определение наибольшего общего делителя.</br>
+Запуск из консоли: make brain-gcd</br>
+Пример: https://asciinema.org/a/wWwYQWsxsikakJawzl5Wwxe4Y
+
+Прогрессия. Поиск пропущенных чисел в последовательности чисел.</br>
+Запуск из консоли: make brain-progression</br>
+Пример: https://asciinema.org/a/sNPCT391AYUgrvR8Oy4ASUkYk
+
+Определение простого числа.</br>
+Запуск из консоли: make brain-prime</br>
+Пример: https://asciinema.org/a/fOkN1DJ0yYfTX13CLybPBwEec
 
 
 ### Hexlet tests and linter status:
