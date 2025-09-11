@@ -5,7 +5,7 @@ namespace BrainGames\Prime;
 use function BrainGames\Engine\startGame;
 
 //-- Игра - "Простое ли число?"
-function initGameData(int $count = 3): void
+function initGameSession(int $count = 3): void
 {
     $gameParams = [];
     $gameParams["rules"] = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -17,8 +17,6 @@ function initGameData(int $count = 3): void
 
     startGame($gameParams);
 }
-
-//-- Проверка на простое число
 function isPrime(int $number): bool
 {
     if ($number <= 1) {

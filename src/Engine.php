@@ -5,46 +5,25 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-    //---Приветствуем пользователя, получаем имя
-function getUserName(): string
+function startGame(array $gameParams): void
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-
-    return $name;
-}
-    //---Функция логики игры и проверки ответов
-function startGame(array $gameParams): void
-{
-    $name = getUserName();
-    ["rules" => $rules,
-    "expectedAnswer" => $expectedAnswer,
-    "questions" => $questions] = $gameParams;
+    ["rules" => $rules, "expectedAnswer" => $expectedAnswer, "questions" => $questions] = $gameParams;
     line($rules);
     for ($i = 0; $i < count($questions); $i++) {
         $answer = prompt("Question: {$questions[$i]}");
-        $answer = is_string($expectedAnswer[$i]) ? $answer : (int)$answer;
+        //$answer = is_string($expectedAnswer[$i]) ? $answer : (int)$answer;
         line("Your answer: {$answer}");
-        if ($answer !== $expectedAnswer[$i]) {
-            wrongAnswer($name, $answer, $expectedAnswer[$i]);
+        if ($answer !== (string)$expectedAnswer[$i]) {
+            line("{$answer} is wrong answer ;(. Correct answer was '{$expectedAnswer[$i]}'.");
+            line("Let's try again, %s!", $name);
             return;
         } else {
             line("Correct!");
         }
     }
-    trueAnswers($name);
-}
-    //---Функция для неверного ответа
-function wrongAnswer(string $name, mixed $answer, mixed $expectedAnswer): void
-{
-    line("{$answer} is wrong answer ;(. Correct answer was '{$expectedAnswer}'.");
-    line("Let's try again, %s!", $name);
-    return;
-}
-    //---Функция для верного ответа (конец игры)
-function trueAnswers(string $name): void
-{
     line("Congratulations, %s!", $name);
     return;
 }

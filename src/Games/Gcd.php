@@ -5,7 +5,7 @@ namespace BrainGames\Gcd;
 use function BrainGames\Engine\startGame;
 
 //-- Игра - Общий делитель -- "НОД"
-function initGameData(int $count = 3): void
+function initGameSession(int $count = 3): void
 {
     $gameParams = [];
     $gameParams["rules"] = 'Find the greatest common divisor of given numbers.';
@@ -18,8 +18,6 @@ function initGameData(int $count = 3): void
 
     startGame($gameParams);
 }
-
-//-- Проверка на общий делитель
 function getGcd(int $num1, int $num2): int
 {
     $a = $num1;
