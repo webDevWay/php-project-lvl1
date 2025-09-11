@@ -2,6 +2,7 @@
     "name": "hexlet/code",
     "license": "MIT",
     "description": "Brain training games collection",
+    "type": "project",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -35,5 +36,7 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.13"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

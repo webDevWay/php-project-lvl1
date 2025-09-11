@@ -30,6 +30,9 @@ function calculate(int $a, int $b, string $operator): int
         case '-':
             $result = $a - $b;
             break;
+        case '*':
+            $result = $a * $b;
+            break;
         default:
             $result = 0;
     }
