@@ -23,7 +23,6 @@ Thumbs.db
 composer
 composer.bat
 composer.phar
-composer.lock
 phpcbf.phar
 phpcs.phar
 video.cast
